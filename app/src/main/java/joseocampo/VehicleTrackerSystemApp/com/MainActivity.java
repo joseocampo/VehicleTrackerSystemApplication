@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity
 
     public void iniciarSesion(View view) {
 
-        //String url = "http://vtsmsph.com/login.php?" + "user=" + txtUser.getText().toString()
-
         String url = "http://vtsmsph.com/login.php?" + "user=" + txtUser.getText().toString()
 
                 + "&password=" + txtPassword.getText().toString();
@@ -83,6 +81,9 @@ public class MainActivity extends AppCompatActivity
                 Intent intent = new Intent(this, PantallaPrincipal.class);
 
                 intent.putExtra("usuario",response.getString("User"));
+
+                intent.putExtra("name",response.getString("Name"));
+                intent.putExtra("surname", response.getString("Surname"));
 
                 Toast.makeText(this, "Ha iniciado sesión con éxito!", Toast.LENGTH_LONG).show();
                 startActivity(intent);

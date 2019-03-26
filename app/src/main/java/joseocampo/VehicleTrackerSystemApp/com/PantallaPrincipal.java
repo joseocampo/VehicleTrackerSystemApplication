@@ -26,7 +26,9 @@ public class PantallaPrincipal extends AppCompatActivity
         FragmentRoutesRequest.OnFragmentInteractionListener{
 
     private TextView txtUserName;
+    private String userId;
     private String userName;
+    private String userSurname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +67,12 @@ public class PantallaPrincipal extends AppCompatActivity
 
         Bundle extras = getIntent().getExtras();
         if(extras!=null){
-            userName = extras.getString("usuario");
-            //Toast.makeText(this,"Hola: "+userName,Toast.LENGTH_LONG).show();
+            userId = extras.getString("usuario");
+            userName = extras.getString("name");
+            userSurname = extras.getString("surname");
+
             getSupportActionBar().setTitle("");
-            getSupportActionBar().setTitle("Bienvenido "+userName);
+            getSupportActionBar().setTitle("Bienvenido(a): "+userName+" "+userSurname);
 
         }
 
@@ -117,7 +121,7 @@ public class PantallaPrincipal extends AppCompatActivity
 
         if (id == R.id.solicitudVehiculo) {
             Bundle bundle = new Bundle();
-            bundle.putString("usuario",userName);
+            bundle.putString("usuario",userId);
             fragmento = new FragmentSolicitarVhiculo();
             fragmento.setArguments(bundle);
             fragmentoSeleccionado=true;
@@ -127,7 +131,7 @@ public class PantallaPrincipal extends AppCompatActivity
 
         } else if (id == R.id.ver_destino) {
             Bundle bundle = new Bundle();
-            bundle.putString("usuario",userName);
+            bundle.putString("usuario",userId);
             fragmento = new FragmentRoutesRequest();
             fragmento.setArguments(bundle);
             fragmentoSeleccionado=true;
