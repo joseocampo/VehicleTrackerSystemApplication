@@ -11,8 +11,12 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +33,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -92,6 +97,8 @@ public class FragmentRoutesRequest extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         //obtenemos el nombre del usuario logeado.
         userNameLogin = getArguments().getString("usuario");
         Toast.makeText(getContext(), "Usuario: " + userNameLogin, Toast.LENGTH_LONG).show();
@@ -102,7 +109,6 @@ public class FragmentRoutesRequest extends Fragment
                 inflater.inflate(R.layout.fragment_fragment_routes_request, container, false);
         layoutCards = (LinearLayout) view.findViewById(R.id.layoutCards);
         loans = new ArrayList<>();
-
 
 
         //este metodo carga los prestamos desde la bd y los guarda en una estructura de dtos tipo ArrayList.
@@ -258,6 +264,10 @@ public class FragmentRoutesRequest extends Fragment
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+
+
 
     class ButtonsOnClickListener implements View.OnClickListener {
         Context context;

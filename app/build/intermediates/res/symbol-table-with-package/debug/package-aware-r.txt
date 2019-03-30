@@ -1086,6 +1086,7 @@ drawable ic_menu_slideshow
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable iniciar
 drawable login
 drawable logo
 drawable mtrl_snackbar_background
@@ -1103,6 +1104,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable prestamo
+drawable ruta
 drawable side_nav_bar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1220,6 +1223,8 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivdibujo
+id ivdibujo2
 id labeled
 id largeLabel
 id layoutCards
@@ -1228,8 +1233,10 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id listMode
 id list_item
+id loans_list_view
 id map
 id masked
 id media_actions
@@ -1252,6 +1259,7 @@ id notification_main_column
 id notification_main_column_container
 id outline
 id packed
+id paraelatributo01
 id parallax
 id parent
 id parentPanel
@@ -1415,6 +1423,7 @@ layout abc_tooltip
 layout activity_location_view
 layout activity_main
 layout activity_pantalla_principal
+layout activity_routes_requests
 layout activity_save_location
 layout app_bar_pantalla_principal
 layout content_pantalla_principal
@@ -1432,6 +1441,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout expandingobjects
 layout fragment_fragment_routes_request
 layout fragment_fragment_solicitar_vhiculo
 layout mtrl_layout_snackbar

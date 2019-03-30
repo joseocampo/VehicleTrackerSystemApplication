@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Moises\\AndroidStudioProjects\\VehicleTrackerSystemApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Moises\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\93bb0856fce80ddd96d9c6c438e1863e\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Moises\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\422771c200ffb55840cf93af6de1d804\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\d718edb2de7151343fcda367c31165d4\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

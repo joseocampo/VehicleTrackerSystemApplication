@@ -76,10 +76,9 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         Bundle bundle = getIntent().getExtras();
         loan = "";
         if (bundle != null) {
-            loan = bundle.getString("loanNumber");
             userLoginName = bundle.getString("usuario");
 
-            Toast.makeText(getApplicationContext(), "Numero de Prestamo: " + loan + " usuario: " + userLoginName, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), " usuario: " + userLoginName, Toast.LENGTH_LONG).show();
         }
 
         //iniciamos el recorrido
@@ -89,9 +88,90 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void initTravel() {
+        int permissionCheck =
+                ContextCompat.checkSelfPermission(getApplicationContext(),
+                        Manifest.permission.ACCESS_FINE_LOCATION);
 
+        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+            } else {
+                //si el permiso no está denegado, hacemos la solicitud del permiso.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+
+        }
+
+        //Toast.makeText(getApplicationContext(), "Hola dentro de onclick", Toast.LENGTH_SHORT).show();
 
         LocationManager locationManager =
+                (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+
+        // Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_LONG).show();
+        final boolean gpsActivado = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (!gpsActivado) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Para que la aplicacion funcione es recomandable activar GPS !");
+            builder.setMessage("Desea activar GPS ?");
+            builder.setCancelable(false);
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "Activando GPS", Toast.LENGTH_SHORT).show();
+                    Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(settingsIntent);
+                }
+            });
+
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "La aplicacion no funciona sin GPS", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            builder.show();
+
+
+        }
+
+        LocationListener locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                obtenerDireccion(location);
+
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+                ///Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                // startActivity(settingsIntent);
+
+
+            }
+        };
+        //se registra el listener con el loctaion manager para recivir actualizacion de localizacion.
+
+        permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
+
+
+        /*LocationManager locationManager =
                 (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
 
         // Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_LONG).show();
@@ -172,7 +252,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
-        }
+        }*/
     }
 
     public void obtenerDireccion(Location location) {
@@ -317,7 +397,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         LatLng myLocation = new LatLng(x, y);
         myMarker.position(myLocation);
 
-         mMap.addMarker(new MarkerOptions().position(myLocation).title("Mi ubicacion" + x+" "+y).icon(BitmapDescriptorFactory.fromResource(R.drawable.car_marker)));
+        mMap.addMarker(new MarkerOptions().position(myLocation).title("Mi ubicacion" + x + " " + y).icon(BitmapDescriptorFactory.fromResource(R.drawable.car_marker)));
     }
 
     @Override

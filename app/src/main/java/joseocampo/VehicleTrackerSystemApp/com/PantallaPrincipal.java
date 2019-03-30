@@ -132,9 +132,10 @@ public class PantallaPrincipal extends AppCompatActivity
         } else if (id == R.id.ver_destino) {
             Bundle bundle = new Bundle();
             bundle.putString("usuario",userId);
-            fragmento = new FragmentRoutesRequest();
-            fragmento.setArguments(bundle);
-            fragmentoSeleccionado=true;
+            Intent intento = new Intent(getApplicationContext(), RoutesRequests.class);
+            intento.putExtra("usuario",userId);
+            startActivity(intento);
+
 
         } else if (id == R.id.nav_manage) {
 
