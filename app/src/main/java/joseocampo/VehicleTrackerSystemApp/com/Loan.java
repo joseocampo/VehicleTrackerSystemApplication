@@ -102,7 +102,7 @@ public class Loan {
     public String toString() {
         StringBuilder r = new StringBuilder();
 
-        r.append("Destino: " + getDetails());
+        r.append(getConsecutive()+" - Destino: " + getDetails());
         r.append("\n");
         r.append("Justificación: " + getJustification());
         r.append("\n");

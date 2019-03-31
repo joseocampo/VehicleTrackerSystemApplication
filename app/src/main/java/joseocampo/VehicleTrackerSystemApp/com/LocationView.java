@@ -50,7 +50,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     private JsonObjectRequest jsonObjectRequest;
     private String street = "";
     private TextView txtDireccion, txtCoordenadas;
-    private String loan;
+    private int loanNumber;
     private String userLoginName;
     private MarkerOptions myMarker;
     private double latitude, longitude;
@@ -74,11 +74,12 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
 
 
         Bundle bundle = getIntent().getExtras();
-        loan = "";
         if (bundle != null) {
             userLoginName = bundle.getString("usuario");
+            loanNumber = bundle.getInt("loanNumber");
 
-            Toast.makeText(getApplicationContext(), " usuario: " + userLoginName, Toast.LENGTH_LONG).show();
+
+            Toast.makeText(getApplicationContext(), " usuario: " + userLoginName+" LoanNumber: "+loanNumber, Toast.LENGTH_LONG).show();
         }
 
         //iniciamos el recorrido
@@ -141,26 +142,19 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                obtenerDireccion(location);
-
+                setDirection(location);
             }
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-
             }
 
             @Override
             public void onProviderEnabled(String provider) {
-
             }
 
             @Override
             public void onProviderDisabled(String provider) {
-                ///Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                // startActivity(settingsIntent);
-
-
             }
         };
         //se registra el listener con el loctaion manager para recivir actualizacion de localizacion.
@@ -169,93 +163,9 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
                 Manifest.permission.ACCESS_FINE_LOCATION);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
-
-
-        /*LocationManager locationManager =
-                (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
-
-        // Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_LONG).show();
-        final boolean gpsActivado = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        if (!gpsActivado) {
-            //  Toast.makeText(getContext(), "Entro al if", Toast.LENGTH_SHORT).show();
-            AlertDialog.Builder builder = new AlertDialog.Builder(LocationView.this);
-            builder.setTitle("Para que la aplicacion funcione es recomandable activar GPS !");
-            builder.setMessage("Desea activar GPS ?");
-            builder.setCancelable(false);
-            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // Toast.makeText(getContext(), "Activando GPS", Toast.LENGTH_SHORT).show();
-                    Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    startActivity(settingsIntent);
-                }
-            });
-
-            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // Toast.makeText(getContext(), "La aplicacion no funciona sin GPS", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            builder.show();
-
-
-        }
-
-        LocationListener locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-//                        txtCoordenadas.setText("Latitud:  " + location.getLatitude() + "    Longitud:  "
-//                                + location.getLongitude()
-//                        );
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-                obtenerDireccion(location);
-
-            }
-
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-                ///Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                // startActivity(settingsIntent);
-
-
-            }
-        };
-
-        int permissionCheck = ContextCompat.checkSelfPermission(LocationView.this,
-                Manifest.permission.ACCESS_FINE_LOCATION);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-
-        permissionCheck =
-                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-
-
-        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-            } else {
-                //si el permiso no está denegado, hacemos la solicitud del permiso.
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            }
-        }*/
     }
 
-    public void obtenerDireccion(Location location) {
+    public void setDirection(Location location) {
         if (location != null) {
             if (location.getLongitude() != 0 && location.getLatitude() != 0) {
                 Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
@@ -272,7 +182,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
 
                         } else {
 
-                            guardarCalle(address.getAddressLine(0));
+                            saveStreet(address.getAddressLine(0));
                             setCurrentLocation(location.getLatitude(), location.getLongitude());
                             street = address.getAddressLine(0);
 
@@ -287,9 +197,9 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private void guardarCalle(String calle) {
+    private void saveStreet(String calle) {
 
-        String url = new StringBuilder().append("http://vtsmsph.com/guardarCalle.php?user=tony").append("&route=").append(loan).append("&calle=").append(calle).toString();
+        String url = new StringBuilder().append("http://vtsmsph.com/guardarCalle.php?user=tony").append("&route=").append(String.valueOf(loanNumber)).append("&calle=").append(calle).toString();
         //Toast.makeText(getApplicationContext(), "URL:   " +calle, Toast.LENGTH_LONG).show();
         url.replace(" ", "%20");
         //Toast.makeText(getApplicationContext(), "URL despues de replace:   " +url, Toast.LENGTH_LONG).show();
@@ -355,21 +265,12 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng myLocation = new LatLng(10.000889, -84.117115);
+        LatLng myLocation = new LatLng(9.9948033, -84.0982678);
 
         myMarker = new MarkerOptions().position(myLocation).title("Mi ubicacion: " + myLocation.latitude + " " + myLocation.longitude).icon(BitmapDescriptorFactory.fromResource(R.drawable.car_marker));
 

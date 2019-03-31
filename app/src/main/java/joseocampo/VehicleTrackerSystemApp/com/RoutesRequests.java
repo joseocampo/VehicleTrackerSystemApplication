@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Constraints;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -37,39 +40,41 @@ public class RoutesRequests extends AppCompatActivity
     private LinearLayout layoutCards;
     private RequestQueue requestQueue;
     private JsonArrayRequest jsonArrayRequest;
-    private ArrayList<Loan> loans;
+    private ArrayList<Loan> myLoans;
     private String userNameLogin;
+    private List<ExpandObjects> loansItemView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes_requests);
+        //colocamos titulo y color al actionbar.
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
         getSupportActionBar().setTitle("Prestamos Activos");
 
 
         //obtenemos el nombre del usuario logeado.
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null){
+        if (bundle != null) {
             userNameLogin = bundle.getString("usuario");
-             Toast.makeText(getApplicationContext(), "Usuario: " + userNameLogin, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Usuario: " + userNameLogin, Toast.LENGTH_SHORT).show();
         }
 
 
-
-
         layoutCards = (LinearLayout) findViewById(R.id.layoutCards);
-        loans = new ArrayList<>();
-        loadLoans();
-       // LlenarListaObjetos();
-//        LlenarListView();
-//        RegistrarClicks();
+        myLoans = new ArrayList<>();
+        loansItemView = new ArrayList<ExpandObjects>();
+
+        //cargamos los prestamos desde la base de datos..
+        readLoans();
     }
 
-    public void loadLoans() {
+    public void readLoans() {
+
+        //en este metodo nos conectamos a la base de datos y cargamos todos los prestamos
+        //del usuario logeado y el vehiculo seleccionado.
 
         String url = "http://vtsmsph.com/loadCarLoans.php?user=david" + "&ident=" + userNameLogin;
-
         url.replace(" ", "%20");
 
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, this, this);
@@ -80,22 +85,25 @@ public class RoutesRequests extends AppCompatActivity
 
     @Override
     public void onResponse(JSONArray response) {
-//        Mensaje("Total: "+loans.size());
+
+        //llenamos la lista de prestamos, para su posterior uso.
         createLoans(response);
 
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+        //sino podemos leer los prestamos de la base de datos, mostramos un mensaje de error.
+        Toast.makeText(getApplicationContext(), "NOT LOANS: " + error.toString(), Toast.LENGTH_SHORT).show();
 
     }
 
-    public void createLoans(JSONArray pLoans) {
-        for (int i = 0; i < pLoans.length(); i++) {
+    public void createLoans(JSONArray pmyLoans) {
+        //llenamos una lista con todos los prestmos leidos de la bd.
+        for (int i = 0; i < pmyLoans.length(); i++) {
             try {
 
-                JSONObject jsonObject = pLoans.getJSONObject(i);
+                JSONObject jsonObject = pmyLoans.getJSONObject(i);
                 Loan loan = new Loan();
                 loan.setConsecutive(jsonObject.getInt("consecutivo"));
                 loan.setDate(jsonObject.getString("PK_Date"));
@@ -108,19 +116,19 @@ public class RoutesRequests extends AppCompatActivity
                 loan.setBeginHour(jsonObject.getString("beginHour"));
                 loan.setEndHour(jsonObject.getString("endHour"));
 
-
-                loans.add(loan);
+                loansItemView.add(new ExpandObjects(loan.toString(), "", R.drawable.ruta, R.drawable.iniciar));
+                // myLoans.add(loan);
 
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         }
-        Toast.makeText(getApplicationContext(), "Prestamos: " + loans.size(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Prestamos: " + myLoans.size(), Toast.LENGTH_SHORT).show();
+
         //llamamos el metodo que forma la vista de cards con los prestamos.
-       // showLoans();
-        LlenarListaObjetos();
-        LlenarListView();
-        RegistrarClicks();
+        //LlenarListaObjetos();
+        fillListView();
+        addEventListeners();
     }
 
 
@@ -141,8 +149,8 @@ public class RoutesRequests extends AppCompatActivity
         //este bucle agrega un cardView que representa un prestamos
         //si leemos 10 prestamos activos desd ela base de datos, entonces
         //este ciclo crea 10 cardView uno para cada prestamos.
-        for (int i = 0; i < loans.size(); i++) {
-            // Toast.makeText(getContext(),loans.get(i).toString()+"\n",Toast.LENGTH_SHORT).show();
+        for (int i = 0; i < myLoans.size(); i++) {
+            // Toast.makeText(getContext(),myLoans.get(i).toString()+"\n",Toast.LENGTH_SHORT).show();
             CardView cardView = new CardView(getApplicationContext());
             cardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
             cardView.setLayoutParams(layoutParamsCards);
@@ -157,11 +165,11 @@ public class RoutesRequests extends AppCompatActivity
             textView.setTextColor(Color.BLACK);
             textView.setPadding(5, 5, 5, 5);
 
-            textView.setText(loans.get(i).toString());
+            textView.setText(myLoans.get(i).toString());
 
 
             Button button = new Button(getApplicationContext());
-            button.setText("Iniciar Recorrido para el prestamo # " + loans.get(i).getConsecutive());
+            button.setText("Iniciar Recorrido para el prestamo # " + myLoans.get(i).getConsecutive());
             button.setBackgroundColor(Color.parseColor("#F5F5F5"));
             button.setTextColor(Color.BLACK);
             button.setOnClickListener(new ButtonsOnClickListener(getApplicationContext()));
@@ -176,29 +184,27 @@ public class RoutesRequests extends AppCompatActivity
         }
     }
 
-    private List<ExpandObjects> misObjetos = new ArrayList<ExpandObjects>();
 
-    private void LlenarListaObjetos() {
-        for (int i = 0; i < loans.size(); i++) {
-//            misObjetos.add(new ExpandObjects("Destino: La Aurora, Heredia.\n\n" + "Usuario: Mauricio González\n" + "Vehículo: AD231\n" + "Hora Inicio: 10:30am\n" + "Hora Final: 2:00pm", "A1-02", R.drawable.prestamo, R.drawable.iniciar));
-            misObjetos.add(new ExpandObjects(loans.get(i).toString(), "A1-02", R.drawable.ruta, R.drawable.iniciar));
+    private void fillObjectsList() {
+        for (int i = 0; i < myLoans.size(); i++) {
+            loansItemView.add(new ExpandObjects(myLoans.get(i).toString(), "A1-02", R.drawable.ruta, R.drawable.iniciar));
         }
-        Mensaje("Objetos: "+misObjetos.size());
+        Mensaje("Objetos: " + loansItemView.size());
     }
 
-    private void LlenarListView() {
+    private void fillListView() {
         ArrayAdapter<ExpandObjects> adapter = new MyListAdapter();
         ListView list = (ListView) findViewById(R.id.loans_list_view);
         list.setAdapter(adapter);
     }
 
-    private void RegistrarClicks() {
+    private void addEventListeners() {
         ListView list = (ListView) findViewById(R.id.loans_list_view);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View viewClicked,
                                     int position, long id) {
-                ExpandObjects ObjEscogido = misObjetos.get(position);
+                ExpandObjects ObjEscogido = loansItemView.get(position);
 
                 Mensaje("Seleccione el ícono de la derecha para iniciar el recorrido!");
             }
@@ -209,11 +215,9 @@ public class RoutesRequests extends AppCompatActivity
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
-    ;
-
     private class MyListAdapter extends ArrayAdapter<ExpandObjects> {
         public MyListAdapter() {
-            super(RoutesRequests.this, R.layout.expandingobjects, misObjetos);
+            super(RoutesRequests.this, R.layout.expandingobjects, loansItemView);
         }
 
         @Override
@@ -223,7 +227,7 @@ public class RoutesRequests extends AppCompatActivity
             if (itemView == null) {
                 itemView = getLayoutInflater().inflate(R.layout.expandingobjects, parent, false);
             }
-            ExpandObjects ObjetoActual = misObjetos.get(position);
+            ExpandObjects ObjetoActual = loansItemView.get(position);
             // Fill the view
             ImageView imageView = (ImageView) itemView.findViewById(R.id.ivdibujo);
             imageView.setImageResource(ObjetoActual.getNumDibujo1());
@@ -233,6 +237,7 @@ public class RoutesRequests extends AppCompatActivity
             ImageView imageView2 = (ImageView) itemView.findViewById(R.id.ivdibujo2);
             imageView2.setImageResource(ObjetoActual.getNumDibujo2());
             imageView2.setOnClickListener(new ButtonsOnClickListener(getContext()));
+
             return itemView;
         }
     }
@@ -246,19 +251,23 @@ public class RoutesRequests extends AppCompatActivity
 
         @Override
         public void onClick(View v) {
-            Button b = (Button) v;
-//            Toast.makeText(this.context,b.getText(),Toast.LENGTH_SHORT).show();
+            ImageView imageView = (ImageView) v;
+            ConstraintLayout constraintLayout = (ConstraintLayout) imageView.getParent();
+            TextView textView = (TextView) constraintLayout.getChildAt(1);
 
+            int loanNumber = Integer.parseInt(loanNumber(textView.getText().toString()));
+
+            //este intent nos lleva a la vista donde se muestra el mapa para iniciar el recorrido.
             Intent intent = new Intent(getApplicationContext(), LocationView.class);
-
             intent.putExtra("usuario", userNameLogin);
+            intent.putExtra("loanNumber", loanNumber);
             startActivity(intent);
         }
 
-        public String getLoanNumber(String cadena) {
+        public String loanNumber(String cadena) {
             char[] auxilar = cadena.toCharArray();
             String plate = "";
-            for (int i = (auxilar.length - 1); i > 0; i--) {
+            for (int i = 0; i < auxilar.length; i++) {
                 if (auxilar[i] == ' ') {
                     return plate;
                 } else {
