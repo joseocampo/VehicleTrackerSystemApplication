@@ -30,4 +30,6 @@
         android:layout_margin="18dp"
         android:gravity="center"
         android:text="-No hay coordenadas-" />
+
+
 </LinearLayout>

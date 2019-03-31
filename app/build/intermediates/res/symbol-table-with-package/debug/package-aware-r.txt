@@ -1194,6 +1194,7 @@ id disableHome
 id drawer_layout
 id edit_query
 id end
+id endDate
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
@@ -1220,6 +1221,7 @@ id icon_only
 id ifRoom
 id image
 id info
+id initDate
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1334,7 +1336,6 @@ id textView
 id textView1
 id textView2
 id textView3
-id textViewTitle
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

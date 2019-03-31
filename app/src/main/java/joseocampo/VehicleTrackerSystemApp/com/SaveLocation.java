@@ -16,7 +16,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +69,7 @@ public class SaveLocation extends AppCompatActivity
         }
 
 
+
         btnActivarUbicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,28 +80,7 @@ public class SaveLocation extends AppCompatActivity
                 // Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_LONG).show();
                 final boolean gpsActivado = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
                 if (!gpsActivado) {
-                    //  Toast.makeText(getContext(), "Entro al if", Toast.LENGTH_SHORT).show();
-                   /* AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setTitle("Para que la aplicacion funcione es recomandable activar GPS !");
-                    builder.setMessage("Desea activar GPS ?");
-                    builder.setCancelable(false);
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                           // Toast.makeText(getContext(), "Activando GPS", Toast.LENGTH_SHORT).show();
-                            Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                            startActivity(settingsIntent);
-                        }
-                    });
 
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                           // Toast.makeText(getContext(), "La aplicacion no funciona sin GPS", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-                    builder.show();*/
 
 
                 }
@@ -153,7 +136,6 @@ public class SaveLocation extends AppCompatActivity
             }
         }
     }
-
     public void obtenerDireccion(Location location) {
         if (location != null) {
             if (location.getLongitude() != 0 && location.getLatitude() != 0) {

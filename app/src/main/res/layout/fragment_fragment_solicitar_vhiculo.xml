@@ -18,16 +18,6 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/textViewTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="center"
-                android:text="Solicitud de Vehiculo"
-                android:textSize="16sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView1"
@@ -108,11 +98,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="6dp"
                 android:background="@android:color/background_light"
                 android:gravity="left"
                 android:padding="6dp"
                 android:text="Seleccione Hora Final"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/initDate"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="Seleccione Fecha Inicio"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/endDate"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="Seleccione Fecha Final"
                 android:textAllCaps="false" />
 
             <Button

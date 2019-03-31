@@ -1,9 +1,14 @@
 package joseocampo.VehicleTrackerSystemApp.com;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,6 +38,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class FragmentSolicitarVhiculo extends Fragment
@@ -50,7 +57,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     //este es un comentario de prueba para hacer commit.
     private EditText campoDestino, campoJustificacion;
-    private Button btnRealizarSolicitd, btnSelectbeginHour, btnSelectEndHour;
+    private Button btnRealizarSolicitd, btnSelectbeginHour, btnSelectEndHour, btnSelectEndDate,btnSelectInitDate;
     private TextView userRequest, vehicleRequest, targetRequest, dateTimerequest;
 
     private Spinner lista;
@@ -67,6 +74,21 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     //en este atributo se guarda el nombre del usuario logeado
     private String userNameLogin;
+
+
+    //parametro fecha
+    private static final String CERO = "0";
+    private static final String BARRA = "/";
+
+    //Calendario para obtener fecha & hora
+    public final Calendar c = Calendar.getInstance();
+
+    //Variables para obtener la fecha
+    final int mes = c.get(Calendar.MONTH);
+    final int dia = c.get(Calendar.DAY_OF_MONTH);
+    final int anio = c.get(Calendar.YEAR);
+
+    final Calendar myCalendar = Calendar.getInstance();
 
 
     public FragmentSolicitarVhiculo() {
@@ -105,12 +127,16 @@ public class FragmentSolicitarVhiculo extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_solicitar_vhiculo, container, false);
 
         //obtenemos el botoon para seleccionar la hora
         btnSelectbeginHour = (Button) vista.findViewById(R.id.btnBeginHour);
         btnSelectEndHour = (Button) vista.findViewById(R.id.btnEndHour);
+        btnSelectEndDate = (Button) vista.findViewById(R.id.endDate);
+        btnSelectInitDate = (Button) vista.findViewById(R.id.initDate);
 
 
         lista = (Spinner) vista.findViewById(R.id.vehicleList);
@@ -188,8 +214,49 @@ public class FragmentSolicitarVhiculo extends Fragment
             }
         });
 
+        btnSelectEndDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                chooseEndDate();
+            }
+
+        });
+        btnSelectInitDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                chooseInitDate();
+            }
+
+        });
 
         return vista;
+    }
+
+    private void chooseInitDate() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                final String selectedDate = year + "-" + (month+1) + "-" + day;
+                btnSelectInitDate.setText(selectedDate);
+            }
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
+    }
+    private void chooseEndDate() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                final String selectedDate = year + "-" + (month+1) + "-" + day;
+                btnSelectEndDate.setText(selectedDate);
+            }
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
     public String getPlate(String cadena) {
