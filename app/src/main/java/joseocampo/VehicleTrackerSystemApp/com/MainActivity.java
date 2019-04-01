@@ -3,7 +3,9 @@ package joseocampo.VehicleTrackerSystemApp.com;
 import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.content.Context;
@@ -22,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,21 +34,27 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity
         implements Response.Listener<JSONObject>, Response.ErrorListener {
+    private ImageView image_login;
+    private EditText txtUser, txtPassword;
 
+
+    private RequestQueue request;
+    private JsonObjectRequest jsonObjectRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
+        getSupportActionBar().setBackgroundDrawable(
+                new BitmapDrawable(BitmapFactory.decodeResource(getResources(),R.drawable.fondos)));
         getSupportActionBar().setTitle("Control de Vehículos");
 
-        btnLogin = (Button) findViewById(R.id.btnLogin);
+        image_login = (ImageView) findViewById(R.id.image_login);
         txtUser = (EditText) findViewById(R.id.txtUser);
         txtPassword = (EditText) findViewById(R.id.txtPassWord);
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        image_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 iniciarSesion(v);
@@ -108,12 +118,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    private Button btnLogin;
-    private EditText txtUser, txtPassword;
 
-
-    private RequestQueue request;
-    private JsonObjectRequest jsonObjectRequest;
 
 
 }

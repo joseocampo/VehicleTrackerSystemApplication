@@ -1,7 +1,9 @@
 package joseocampo.VehicleTrackerSystemApp.com;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,7 +38,9 @@ public class PantallaPrincipal extends AppCompatActivity
         setContentView(R.layout.activity_pantalla_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
+
+        getSupportActionBar().setBackgroundDrawable(
+                new BitmapDrawable(BitmapFactory.decodeResource(getResources(),R.drawable.fondos)));
         getSupportActionBar().setTitle("Bienvenido ");
 
 

@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/itemview">
 
     <ImageView
         android:id="@+id/ivdibujo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         app:layout_constraintEnd_toStartOf="@+id/paraelatributo01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ruta" />
+        app:srcCompat="@drawable/route" />
 
     <TextView
         android:id="@+id/paraelatributo01"
@@ -41,5 +42,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/paraelatributo01"
         app:layout_constraintTop_toTopOf="@+id/paraelatributo01"
-        app:srcCompat="@drawable/iniciar" />
+        app:srcCompat="@drawable/inicio" />
 </android.support.constraint.ConstraintLayout>

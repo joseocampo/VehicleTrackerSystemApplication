@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +46,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         Response.ErrorListener, Response.Listener<JSONObject> {
 
     private GoogleMap mMap;
-    private Button btnGPS, btnNormal, btnTerminarRecorido, btnHybrid, btnLand, btnSatelital;
+    private Button btnGPS, btnNormal, btnHybrid, btnLand, btnSatelital;
     private RequestQueue request;
     private JsonObjectRequest jsonObjectRequest;
     private String street = "";
@@ -54,6 +55,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     private String userLoginName;
     private MarkerOptions myMarker;
     private double latitude, longitude;
+    private ImageView image_terminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,8 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         btnHybrid = (Button) findViewById(R.id.btnHybrid);
         btnLand = (Button) findViewById(R.id.btn_land);
         btnSatelital = (Button) findViewById(R.id.btnSatelital);
-        btnTerminarRecorido = (Button) findViewById(R.id.btnTerminar);
+        image_terminar = (ImageView) findViewById(R.id.image_terminar);
+
         //agregamos eventos a los botones de cambiar el tipo de vista para el ampa.
         addEvents();
 
@@ -79,7 +82,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
             loanNumber = bundle.getInt("loanNumber");
 
 
-            Toast.makeText(getApplicationContext(), " usuario: " + userLoginName+" LoanNumber: "+loanNumber, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), " usuario: " + userLoginName + " LoanNumber: " + loanNumber, Toast.LENGTH_LONG).show();
         }
 
         //iniciamos el recorrido
@@ -163,6 +166,28 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
                 Manifest.permission.ACCESS_FINE_LOCATION);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
+    }
+
+    private void failureReport() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Reportar Averías !");
+        builder.setMessage("Desea reportar alguna avería del vehículo ?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent settingsIntent = new Intent(LocationView.this, FailureReport.class);
+                startActivity(settingsIntent);
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishTravel();
+            }
+        });
+
+        builder.show();
     }
 
     public void setDirection(Location location) {
@@ -254,14 +279,18 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
                 changeTypeSatelital();
             }
         });
-        btnTerminarRecorido.setOnClickListener(new View.OnClickListener() {
+        image_terminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PantallaPrincipal.class);
-                intent.putExtra("usuario", userLoginName);
-                startActivity(intent);
+                failureReport();
             }
         });
+    }
+
+    private void finishTravel() {
+        Intent intent = new Intent(getApplicationContext(), RoutesRequests.class);
+        intent.putExtra("usuario", userLoginName);
+        startActivity(intent);
     }
 
 
@@ -272,7 +301,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         LatLng myLocation = new LatLng(9.9948033, -84.0982678);
 
-        myMarker = new MarkerOptions().position(myLocation).title("Mi ubicacion: " + myLocation.latitude + " " + myLocation.longitude).icon(BitmapDescriptorFactory.fromResource(R.drawable.car_marker));
+        myMarker = new MarkerOptions().position(myLocation).title("Mi ubicacion: " + myLocation.latitude + " " + myLocation.longitude).icon(BitmapDescriptorFactory.fromResource(R.drawable.car3));
 
         mMap.addMarker(myMarker);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
@@ -298,7 +327,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         LatLng myLocation = new LatLng(x, y);
         myMarker.position(myLocation);
 
-        mMap.addMarker(new MarkerOptions().position(myLocation).title("Mi ubicacion" + x + " " + y).icon(BitmapDescriptorFactory.fromResource(R.drawable.car_marker)));
+        mMap.addMarker(new MarkerOptions().position(myLocation).title("Mi ubicacion" + x + " " + y).icon(BitmapDescriptorFactory.fromResource(R.drawable.car3)));
     }
 
     @Override

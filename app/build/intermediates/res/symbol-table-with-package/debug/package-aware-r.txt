@@ -1045,6 +1045,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable car3
 drawable car_marker
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1071,7 +1072,10 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable end
+drawable failure_icon
 drawable fondologin
+drawable fondos
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable home_logo
@@ -1086,11 +1090,16 @@ drawable ic_menu_slideshow
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon_vehicle
 drawable iniciar
-drawable login
+drawable inicio
+drawable itemview
+drawable loan_icon
+drawable login_icon
 drawable logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable my_loan
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1105,10 +1114,14 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable prestamo
+drawable route
 drawable ruta
+drawable save
 drawable side_nav_bar
+drawable terminar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user_account
 drawable vehiculo
 id ALT
 id CTRL
@@ -1153,7 +1166,6 @@ id btnActivarUbicacion
 id btnBeginHour
 id btnEndHour
 id btnHybrid
-id btnLogin
 id btnRealizarSolicitud
 id btnSatelital
 id btnTerminar
@@ -1192,6 +1204,9 @@ id dimensions
 id direct
 id disableHome
 id drawer_layout
+id editText2
+id editText3
+id editText4
 id edit_query
 id end
 id endDate
@@ -1220,6 +1235,9 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
+id image_login
+id image_terminar
 id info
 id initDate
 id invisible
@@ -1277,6 +1295,7 @@ id right
 id right_icon
 id right_side
 id satellite
+id save_failure
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1344,7 +1363,6 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
-id tituloMapas
 id toolbar
 id top
 id topPanel
@@ -1421,6 +1439,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_failure_report
 layout activity_location_view
 layout activity_main
 layout activity_pantalla_principal
@@ -1443,6 +1462,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout expandingobjects
+layout fragment_fragment_failures
 layout fragment_fragment_routes_request
 layout fragment_fragment_solicitar_vhiculo
 layout mtrl_layout_snackbar

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
-    },
-    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_bottom_sheet_dialog.xml.flat",
@@ -30,6 +30,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_failure_icon.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\failure_icon.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
@@ -56,8 +60,16 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_car3.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\car3.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_terminar.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\terminar.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -100,12 +112,12 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_tick_mark_material.xml.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\589b29c8a6958183c57ed0a2cbe2efe3\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_tick_mark_material.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -114,6 +126,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_show_password.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_inicio.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\inicio.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
@@ -136,36 +152,36 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
-    },
-    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_cascading_menu_item_layout.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_cascading_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\1f24058c80e4fad48ca70c23fbffb978\\res\\layout\\notification_template_big_media_custom.xml"
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\1f24058c80e4fad48ca70c23fbffb978\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_btn_ripple_color.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\color\\mtrl_btn_text_btn_ripple_color.xml"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_expand_spec.xml.flat",
@@ -204,6 +220,10 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_save.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\save.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -216,12 +236,12 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
@@ -234,6 +254,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\589b29c8a6958183c57ed0a2cbe2efe3\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fondos.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\fondos.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -452,6 +476,10 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loan_icon.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\loan_icon.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_fondologin.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable-v21\\fondologin.png"
     },
@@ -576,10 +604,6 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_login.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable-v21\\login.png"
-    },
-    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_light.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable\\abc_item_background_holo_light.xml"
     },
@@ -638,6 +662,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_hide_motion_spec.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\animator\\mtrl_fab_hide_motion_spec.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_user_account.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\user_account.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -844,6 +872,10 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_end.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\end.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-xhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -914,6 +946,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_route.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\route.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
@@ -1452,6 +1488,10 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\anim\\design_snackbar_in.xml"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_icon.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\login_icon.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
@@ -1610,6 +1650,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -1864,12 +1908,12 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\interpolator\\mtrl_linear_out_slow_in.xml"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_loan.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\my_loan.png"
     },
     {
-        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_logo.png.flat",
-        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable-v21\\logo.png"
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\5d6c964ffba1bb6c59ca77e2461fb3c2\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1978,6 +2022,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\1f24058c80e4fad48ca70c23fbffb978\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_fragment_failures.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\layout\\fragment_fragment_failures.xml"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -2112,6 +2160,10 @@
         "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_failure_report.xml.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\layout\\activity_failure_report.xml"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -2168,6 +2220,10 @@
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_vehicle.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\icon_vehicle.png"
+    },
+    {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_screen_content_include.xml"
     },
@@ -2210,6 +2266,10 @@
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "C:\\Users\\Jose Ocampo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d82de72f123ccd083fc63450fef46f7d\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\drawable_itemview.png.flat",
+        "source": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\src\\main\\res\\drawable\\itemview.png"
     },
     {
         "merged": "C:\\Users\\Jose Ocampo\\Desktop\\VehicleTrackerSystemApplication\\Vehicle_Tracker_System_App\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",

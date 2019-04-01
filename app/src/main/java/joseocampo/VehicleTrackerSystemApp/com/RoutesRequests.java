@@ -2,7 +2,9 @@ package joseocampo.VehicleTrackerSystemApp.com;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Constraints;
@@ -49,7 +51,9 @@ public class RoutesRequests extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routes_requests);
         //colocamos titulo y color al actionbar.
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#263238")));
+
+        getSupportActionBar().setBackgroundDrawable(
+                new BitmapDrawable(BitmapFactory.decodeResource(getResources(),R.drawable.fondos)));
         getSupportActionBar().setTitle("Prestamos Activos");
 
 
@@ -116,7 +120,7 @@ public class RoutesRequests extends AppCompatActivity
                 loan.setBeginHour(jsonObject.getString("beginHour"));
                 loan.setEndHour(jsonObject.getString("endHour"));
 
-                loansItemView.add(new ExpandObjects(loan.toString(), "", R.drawable.ruta, R.drawable.iniciar));
+                loansItemView.add(new ExpandObjects(loan.toString(), "", R.drawable.route, R.drawable.inicio));
                 // myLoans.add(loan);
 
             } catch (JSONException e) {
