@@ -25,7 +25,8 @@ import android.widget.Toast;
 public class PantallaPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentSolicitarVhiculo.OnFragmentInteractionListener,
-        FragmentRoutesRequest.OnFragmentInteractionListener{
+        FragmentRoutesRequest.OnFragmentInteractionListener,
+        FragmentFailure.OnFragmentInteractionListener {
 
     private TextView txtUserName;
     private String userId;
@@ -40,9 +41,8 @@ public class PantallaPrincipal extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setBackgroundDrawable(
-                new BitmapDrawable(BitmapFactory.decodeResource(getResources(),R.drawable.fondos)));
+                new BitmapDrawable(BitmapFactory.decodeResource(getResources(), R.drawable.fondos)));
         getSupportActionBar().setTitle("Bienvenido ");
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -70,13 +70,13 @@ public class PantallaPrincipal extends AppCompatActivity
 
 
         Bundle extras = getIntent().getExtras();
-        if(extras!=null){
+        if (extras != null) {
             userId = extras.getString("usuario");
             userName = extras.getString("name");
             userSurname = extras.getString("surname");
 
             getSupportActionBar().setTitle("");
-            getSupportActionBar().setTitle("Bienvenido(a): "+userName+" "+userSurname);
+            getSupportActionBar().setTitle("Bienvenido(a): " + userName + " " + userSurname);
 
         }
 
@@ -120,24 +120,30 @@ public class PantallaPrincipal extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragmento=null;
+        Fragment fragmento = null;
         boolean fragmentoSeleccionado = false;
 
         if (id == R.id.solicitudVehiculo) {
             Bundle bundle = new Bundle();
-            bundle.putString("usuario",userId);
+            bundle.putString("usuario", userId);
             fragmento = new FragmentSolicitarVhiculo();
             fragmento.setArguments(bundle);
-            fragmentoSeleccionado=true;
+            fragmentoSeleccionado = true;
 
         } else if (id == R.id.reporteAveria) {
             //probando commits
 
-        } else if (id == R.id.ver_destino) {
             Bundle bundle = new Bundle();
-            bundle.putString("usuario",userId);
+            bundle.putString("usuario", userId);
+            fragmento = new FragmentFailure();
+            fragmento.setArguments(bundle);
+            fragmentoSeleccionado = true;
+
+        } else if (id == R.id.make_loan) {
+            Bundle bundle = new Bundle();
+            bundle.putString("usuario", userId);
             Intent intento = new Intent(getApplicationContext(), RoutesRequests.class);
-            intento.putExtra("usuario",userId);
+            intento.putExtra("usuario", userId);
             startActivity(intento);
 
 
@@ -148,8 +154,8 @@ public class PantallaPrincipal extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
-        if(fragmentoSeleccionado){
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragmento).commit();
+        if (fragmentoSeleccionado) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, fragmento).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

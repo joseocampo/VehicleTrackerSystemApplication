@@ -13,7 +13,7 @@
             android:icon="@drawable/failure_icon"
             android:title="@string/reportar_aver_as" />
         <item
-            android:id="@+id/ver_destino"
+            android:id="@+id/make_loan"
             android:icon="@drawable/my_loan"
             android:title="Prestamos Activos" />
         <item
