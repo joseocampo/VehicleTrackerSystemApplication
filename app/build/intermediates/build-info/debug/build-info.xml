@@ -1,61 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="24"
-    build-mode="COLD"
-    density="tvdpi"
+    api-level="23"
+    build-mode="FULL"
+    density="hdpi"
     format="10"
-    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.3.2"
-    timestamp="1554087269987"
+    timestamp="1554088092531"
     token="-2780206695479192116"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="7901" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="422" />
+        duration="12398" />
     <task
         name="verifier"
-        duration="465" />
+        duration="0" />
 
-    <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
     <artifact
         location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1554086350682"
+        timestamp="1554088092531"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -86,39 +100,6 @@
         <artifact
             location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1554087269987"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jose Ocampo\Desktop\VehicleTrackerSystemApplication\Vehicle_Tracker_System_App\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

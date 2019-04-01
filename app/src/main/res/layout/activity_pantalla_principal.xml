@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@drawable/itemview"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_pantalla_principal"
         app:menu="@menu/activity_pantalla_principal_drawer" />
