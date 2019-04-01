@@ -57,32 +57,43 @@
                 android:textStyle="normal"
                 tools:targetApi="o" />
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/itemview"
-                android:orientation="horizontal">
+                android:background="@drawable/itemview">
 
 
                 <TextView
-                    android:layout_width="163dp"
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
                     android:layout_height="39dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
                     android:gravity="center"
                     android:text="@string/iniciar_sesion"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/image_login"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/image_login"
-                    android:layout_width="152dp"
+                    android:layout_width="0dp"
                     android:layout_height="43dp"
+                    android:layout_marginBottom="1dp"
                     android:padding="4dp"
-                    android:src="@drawable/login_icon" />
-            </LinearLayout>
+                    android:src="@drawable/login_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView4" />
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
     </ScrollView>

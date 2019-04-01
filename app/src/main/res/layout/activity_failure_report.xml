@@ -51,32 +51,48 @@
                 android:inputType="textPersonName"
                 android:textColor="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" />
-            <LinearLayout
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/itemview"
-                android:orientation="horizontal">
+                android:background="@drawable/itemview">
 
 
                 <TextView
-                    android:layout_width="213dp"
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
                     android:layout_height="39dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="Guardar Avería"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/save_failure"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/save_failure"
-                    android:layout_width="152dp"
+                    android:layout_width="0dp"
                     android:layout_height="43dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="1dp"
                     android:padding="4dp"
-                    android:src="@drawable/save" />
-            </LinearLayout>
+                    android:src="@drawable/save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
     </ScrollView>

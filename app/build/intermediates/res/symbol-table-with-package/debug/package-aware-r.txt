@@ -1254,6 +1254,9 @@ id light
 id line1
 id line3
 id linearLayout
+id linearLayout2
+id linearLayout3
+id linearLayout4
 id listMode
 id list_item
 id loans_list_view
@@ -1356,6 +1359,8 @@ id textView
 id textView1
 id textView2
 id textView3
+id textView4
+id textView5
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
