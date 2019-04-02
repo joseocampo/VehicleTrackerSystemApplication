@@ -4,12 +4,14 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +59,7 @@ public class FragmentSolicitarVhiculo extends Fragment
 
     //este es un comentario de prueba para hacer commit.
     private EditText campoDestino, campoJustificacion;
-    private Button btnRealizarSolicitd, btnSelectbeginHour, btnSelectEndHour, btnSelectEndDate,btnSelectInitDate;
+    private Button btnRealizarSolicitd, btnSelectbeginHour, btnSelectEndHour, btnSelectEndDate, btnSelectInitDate;
     private TextView userRequest, vehicleRequest, targetRequest, dateTimerequest;
 
     private Spinner lista;
@@ -241,18 +243,19 @@ public class FragmentSolicitarVhiculo extends Fragment
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because january is zero
-                final String selectedDate = year + "-" + (month+1) + "-" + day;
+                final String selectedDate = year + "-" + (month + 1) + "-" + day;
                 btnSelectInitDate.setText(selectedDate);
             }
         });
         newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
+
     private void chooseEndDate() {
         DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because january is zero
-                final String selectedDate = year + "-" + (month+1) + "-" + day;
+                final String selectedDate = year + "-" + (month + 1) + "-" + day;
                 btnSelectEndDate.setText(selectedDate);
             }
         });
@@ -293,9 +296,9 @@ public class FragmentSolicitarVhiculo extends Fragment
                     + "&vehicle=" + getPlate(lista.getSelectedItem().toString())
                     + "&destino=" + campoDestino.getText().toString()
                     + "&justificacion=" + campoJustificacion.getText().toString()
-                    + "&dateBegin=" + fecha
+                    + "&dateBegin=" + btnSelectInitDate.getText().toString()
                     + "&beginHour=" + beginHour + ":" + beginMinutes + ":00"
-                    + "&dateEnd=" + fecha
+                    + "&dateEnd=" + btnSelectEndDate.getText().toString()
                     + "&endHour=" + endHour + ":" + endMinutes + ":00";
 
             url.replace(" ", "%20");
@@ -360,11 +363,15 @@ public class FragmentSolicitarVhiculo extends Fragment
 
                 } else {
                     if (jsonObject.getString("Resultado").equals("0")) {
-                        Toast.makeText(getContext(),
-                                "Ya existe un prestamo activo de " +
-                                        response.getJSONObject(1).getString("inicio")
-                                        + " hasta " + response.getJSONObject(2).getString("final")
-                                , Toast.LENGTH_LONG).show();
+
+
+                        MensajeOK(
+                                "Ya existe un prestamo activo del " +
+                                        response.getJSONObject(1).getString("fechaInicio")
+                                        + " a las " + response.getJSONObject(2).getString("horaInicio")
+                                        + " hasta el " + response.getJSONObject(4).getString("fechaFinal")
+                                        + " a las " + response.getJSONObject(3).getString("horaFinal")
+                        );
 
                     } else {
                         Toast.makeText(getContext(), "Error desconocido", Toast.LENGTH_LONG).show();
@@ -399,10 +406,25 @@ public class FragmentSolicitarVhiculo extends Fragment
         }
     }
 
+
+    public void MensajeOK(String msg) {
+        View v1 = getActivity().getWindow().getDecorView().getRootView();
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(v1.getContext());
+        builder1.setMessage(msg);
+        builder1.setCancelable(true);
+        builder1.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
     @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(getContext(), "Detalle del error:  " + error.toString(), Toast.LENGTH_LONG).show();
-
+        System.out.println("Detalle del error:  " + error.toString());
     }
 
     // TODO: Rename method, update argument and hook method into UI event
