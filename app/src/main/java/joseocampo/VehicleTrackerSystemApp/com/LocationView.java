@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -35,10 +36,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -56,6 +59,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     private MarkerOptions myMarker;
     private double latitude, longitude;
     private ImageView image_terminar;
+    private ArrayList<LatLng> milista = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -288,9 +292,10 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void finishTravel() {
-        Intent intent = new Intent(getApplicationContext(), RoutesRequests.class);
-        intent.putExtra("usuario", userLoginName);
-        startActivity(intent);
+//        Intent intent = new Intent(getApplicationContext(), RoutesRequests.class);
+//        intent.putExtra("usuario", userLoginName);
+//        startActivity(intent);
+        drawRoute();
     }
 
 
@@ -304,6 +309,8 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
         myMarker = new MarkerOptions().position(myLocation).title("Mi ubicacion: " + myLocation.latitude + " " + myLocation.longitude).icon(BitmapDescriptorFactory.fromResource(R.drawable.car3));
 
         mMap.addMarker(myMarker);
+        milista.add(myLocation);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
         //activamos los botones de zomm en el mapa.
         mMap.getUiSettings().setZoomControlsEnabled(true);
@@ -311,13 +318,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
 
         //preguntamos si tenemos los permisos de usar mi ubicacion del celular.
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         mMap.setMyLocationEnabled(true);
@@ -326,8 +327,20 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     public void setCurrentLocation(double x, double y) {
         LatLng myLocation = new LatLng(x, y);
         myMarker.position(myLocation);
+        milista.add(myLocation);
 
         mMap.addMarker(new MarkerOptions().position(myLocation).title("Mi ubicacion" + x + " " + y).icon(BitmapDescriptorFactory.fromResource(R.drawable.car3)));
+        drawRoute();
+    }
+
+    private void drawRoute() {
+
+        for (int i = 0; i < milista.size() - 1; i++) {
+            mMap.addPolyline(new PolylineOptions()
+                    .add(milista.get(i))
+                    .add(milista.get(i + 1)).width(5).color(Color.BLACK));
+        }
+
     }
 
     @Override
