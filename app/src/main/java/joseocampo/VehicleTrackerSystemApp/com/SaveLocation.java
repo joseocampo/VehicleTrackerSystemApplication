@@ -48,6 +48,7 @@ public class SaveLocation extends AppCompatActivity
     private Button btnActivarUbicacion;
     private TextView txtDireccion, txtCoordenadas;
     private String loan;
+    private int precision = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +63,11 @@ public class SaveLocation extends AppCompatActivity
         txtCoordenadas = findViewById(R.id.txtCoordenadas);
 
         Bundle bundle = getIntent().getExtras();
-        loan="";
-        if(bundle!=null){
+        loan = "";
+        if (bundle != null) {
             loan = bundle.getString("loanNumber");
-            Toast.makeText(getApplicationContext(),"Numero de Prestamo: "+loan,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Numero de Prestamo: " + loan, Toast.LENGTH_LONG).show();
         }
-
 
 
         btnActivarUbicacion.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +80,6 @@ public class SaveLocation extends AppCompatActivity
                 // Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_LONG).show();
                 final boolean gpsActivado = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
                 if (!gpsActivado) {
-
 
 
                 }
@@ -136,6 +135,7 @@ public class SaveLocation extends AppCompatActivity
             }
         }
     }
+
     public void obtenerDireccion(Location location) {
         if (location != null) {
             if (location.getLongitude() != 0 && location.getLatitude() != 0) {
@@ -149,13 +149,16 @@ public class SaveLocation extends AppCompatActivity
                         txtDireccion.setText("Direccion:  " + address.getAddressLine(0));
 
                         if (street.equals(address.getAddressLine(0))) {
-
+                            precision = 0;
 
                         } else {
+                            if (precision < 10) {
+                                precision++;
 
-                            guardarCalle(address.getAddressLine(0));
-                            street = address.getAddressLine(0);
-
+                            } else {
+                                guardarCalle(address.getAddressLine(0));
+                                street = address.getAddressLine(0);
+                            }
                         }
 
                     }
@@ -168,7 +171,6 @@ public class SaveLocation extends AppCompatActivity
     }
 
     private void guardarCalle(String calle) {
-
 
 
         String url = new StringBuilder().append("http://vtsmsph.com/guardarCalle.php?user=tony").append("&route=").append(loan).append("&calle=").append(calle).toString();
