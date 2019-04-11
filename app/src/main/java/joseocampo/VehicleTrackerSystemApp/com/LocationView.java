@@ -292,10 +292,10 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void finishTravel() {
-//        Intent intent = new Intent(getApplicationContext(), RoutesRequests.class);
-//        intent.putExtra("usuario", userLoginName);
-//        startActivity(intent);
-        drawRoute();
+        Intent intent = new Intent(getApplicationContext(), RoutesRequests.class);
+        intent.putExtra("usuario", userLoginName);
+        startActivity(intent);
+
     }
 
 
@@ -336,7 +336,7 @@ public class LocationView extends FragmentActivity implements OnMapReadyCallback
     private void drawRoute() {
 
         for (int i = 0; i < milista.size() - 1; i++) {
-            mMap.addPolyline(new PolylineOptions()
+            mMap.addPolyline(new PolylineOptions().width(20)
                     .add(milista.get(i))
                     .add(milista.get(i + 1)).width(5).color(Color.BLACK));
         }
